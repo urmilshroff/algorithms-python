@@ -5,11 +5,11 @@ def kmp(pattern, text):
 
     1) Preprocess pattern to identify any suffixes that are identical to prefixes
 
-        This tells us where to continue from if we get a mismatch between a character in our pattern
-        and the text.
+        This tells us where to continue from if we get a mismatch between a character
+        in our pattern and the text.
 
-    2) Step through the text one character at a time and compare it to a character in the pattern
-        updating our location within the pattern if necessary
+    2) Step through the text one character at a time and compare it to a character in
+        the pattern updating our location within the pattern if necessary
 
     """
 
@@ -46,14 +46,14 @@ def get_failure_array(pattern):
         if pattern[i] == pattern[j]:
             i += 1
         elif i > 0:
-            i = failure[i-1]
+            i = failure[i - 1]
             continue
         j += 1
         failure.append(i)
     return failure
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Test 1)
     pattern = "abc1abc12"
     text1 = "alskfjaldsabc1abc1abc12k23adsfabcabc"
